@@ -14,6 +14,8 @@ El código aún no se modifica para incluir lo expresado en el diagrama de clase
 
 # Instrucciones
 compilar con: "g++ cafeteria.cpp" -o cafeteria
+
 correr en linux: "/cafeteria.out"
+
 correr en windows: "\/cafeteria.exe"
 
