@@ -17,5 +17,5 @@ compilar con: "g++ cafeteria.cpp" -o cafeteria
 
 correr en linux: "/cafeteria.out"
 
-correr en windows: "\/cafeteria.exe"
+correr en windows: ".\/cafeteria.exe"
 
