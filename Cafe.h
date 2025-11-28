@@ -59,9 +59,10 @@ void Cafe::moler(){
         cout<<"El café ya está molido"<< endl;
 }
 void Cafe::tostar(int numero){
-    if (numero < tueste)
+    if (numero < tueste && (tueste - numero)>=15)
         tueste -= numero;
     else
         cout<<"El café ya está más tostado"<< endl;
 }
+
 
