@@ -11,7 +11,7 @@ class Cafe: public Insumo{
     bool entero;
 
     public:
-    Cafe():Insumo(),grano(""),tueste(0),entero(false){}
+    Cafe():Insumo(),grano(""),tueste(95),entero(false){}
     Cafe(string id,string name,float costo,int cantidad,string bean,int roast,bool whole):Insumo(id,name,costo,cantidad){
         grano = bean;
         tueste = roast;
@@ -59,8 +59,9 @@ void Cafe::moler(){
         cout<<"El café ya está molido"<< endl;
 }
 void Cafe::tostar(int numero){
-    if (numero > tueste)
-        tueste += numero;
+    if (numero < tueste)
+        tueste -= numero;
     else
         cout<<"El café ya está más tostado"<< endl;
 }
+
