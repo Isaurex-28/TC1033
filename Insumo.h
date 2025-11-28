@@ -1,82 +1,75 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Insumo{
-    private:
-        int ID;
-        std::string nombre;
-        float cantidad;
-        bool caduco;
+    protected:
+        string ID;
+        string nombre;
+        float costoUnitario;
+        int cantidadInventario;
     public:
 
     //Constructor
-    Insumo():ID(0),nombre(""),cantidad(0.0),caduco(false){};
-    Insumo(int id,std::string nme,float quantity, bool cad): ID(id),nombre(nme),cantidad(quantity),caduco(cad){};
+    Insumo():ID(""),nombre(""),costoUnitario(0.0),cantidadInventario(0){};
+    Insumo(string id,string nme,float costo, int cantidad): ID(id),nombre(nme),costoUnitario(costo),cantidadInventario(cantidad){};
 
     //Setters
-    void setID(int);
-    void setName(std::string);
-    void setCantidad(float);
-    void setCaduco(bool);
+    void setID(string);
+    void setName(string);
+    void setCostoUnitario(float);
+    void setCantidadInventario(int);
 
     //Getters
-    int getID();
-    std::string getNombre();
-    float getCantidad();
-    bool getCaduco();
+    string getID();
+    string getNombre();
+    float getCostoUnitario();
+    int getCantidadInventario();
 
     //Métodos
-    void consume(float);
-    bool disponible();
+    void agregarInventario(int);
+    void usarInsumo(int);
+    float valorInventario();
 
 };
 
 //Setters
-void Insumo::setID(int id){
+void Insumo::setID(string id){
     ID = id;
 }
-void Insumo::setName(std::string nme){
+void Insumo::setName(string nme){
     nombre = nme;
 }
-void Insumo::setCantidad(float quantity){
-    cantidad = quantity;
+void Insumo::setCostoUnitario(float costo){
+    costoUnitario = costo;
 }
-void Insumo::setCaduco(bool cad){
-    caduco = cad;
+void Insumo::setCantidadInventario(int cantidad){
+    cantidadInventario = cantidad;
 }
     
 //Getters
-int Insumo::getID(){
+string Insumo::getID(){
     return ID;
 }
-std::string Insumo::getNombre(){
+string Insumo::getNombre(){
     return nombre;
 }
-float Insumo:: getCantidad(){
-    return cantidad;
+float Insumo:: getCostoUnitario(){
+    return costoUnitario;
 }
-bool Insumo:: getCaduco(){
-    return caduco;
+int Insumo:: getCantidadInventario(){
+    return cantidadInventario;
 }
 
 //Métodos
-void Insumo::consume(float quantity){
-    if (caduco){
-        std::cout << nombre << " está caduco" << std::endl;
-    }
-    if (quantity > cantidad){
-        std::cout << "No hay suficiente " << nombre << std::endl;
-    }
-    if(quantity <= cantidad){
-        cantidad -= quantity;
-        std::cout << "Se consumieron " << quantity << " " << nombre << std::endl;
-    }
+void Insumo::agregarInventario(int quantity){
+    cantidadInventario += quantity;
 }
-bool Insumo::disponible(){
-    if ((cantidad>0)&&(!caduco)){
-        return true;
-    }
-    else{
-        return false;
-    }
+void Insumo::usarInsumo(int quantity){
+    cantidadInventario -= quantity;
+}
+float Insumo::valorInventario(){
+    float valor = costoUnitario * cantidadInventario;
+    return valor;
 }
