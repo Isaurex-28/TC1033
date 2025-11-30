@@ -1,3 +1,6 @@
+#ifndef INSUMO_H
+#define INSUMO_H
+
 #include <iostream>
 #include <string>
 
@@ -13,7 +16,7 @@ class Insumo{
 
     //Constructor
     Insumo():ID(""),nombre(""),costoUnitario(0.0),cantidadInventario(0){};
-    Insumo(string id,string nme,float costo, int cantidad): ID(id),nombre(nme),costoUnitario(costo),cantidadInventario(cantidad){};
+    Insumo(string id,string name,float price, int quantity): ID(id),nombre(name),costoUnitario(price),cantidadInventario(quantity){};
 
     //Setters
     void setID(string);
@@ -28,8 +31,8 @@ class Insumo{
     int getCantidadInventario();
 
     //Métodos
-    void agregarInventario(int);
-    void usarInsumo(int);
+    void agregarInsumo(int);
+    bool usarInsumo(int);
     float valorInventario();
 
 };
@@ -38,14 +41,14 @@ class Insumo{
 void Insumo::setID(string id){
     ID = id;
 }
-void Insumo::setName(string nme){
-    nombre = nme;
+void Insumo::setName(string name){
+    nombre = name;
 }
-void Insumo::setCostoUnitario(float costo){
-    costoUnitario = costo;
+void Insumo::setCostoUnitario(float price){
+    costoUnitario = price;
 }
-void Insumo::setCantidadInventario(int cantidad){
-    cantidadInventario = cantidad;
+void Insumo::setCantidadInventario(int quantity){
+    cantidadInventario = quantity;
 }
     
 //Getters
@@ -63,13 +66,21 @@ int Insumo:: getCantidadInventario(){
 }
 
 //Métodos
-void Insumo::agregarInventario(int quantity){
+void Insumo::agregarInsumo(int quantity){
     cantidadInventario += quantity;
 }
-void Insumo::usarInsumo(int quantity){
-    cantidadInventario -= quantity;
+bool Insumo::usarInsumo(int quantity){
+    if (cantidadInventario - quantity > 0){
+        cantidadInventario -= quantity;
+        return true;
+    }
+    else
+        return false;
+    
 }
 float Insumo::valorInventario(){
     float valor = costoUnitario * cantidadInventario;
     return valor;
 }
+
+#endif
