@@ -1,3 +1,6 @@
+#ifndef DESECHABLE_H
+#define DESECHABLE_H
+
 #include <iostream>
 #include <string>
 #include "Insumo.h"
@@ -11,7 +14,7 @@ class Desechable: public Insumo{
     
     public:
     Desechable():Insumo(),tipo(""),tamanio(0.0){};
-    Desechable(string id,string name,float costo, int cantidad, string type, float size): Insumo(id,name,costo,cantidad){
+    Desechable(string id,string name,float price, int quantity, string type, float size): Insumo(id,name,price,quantity){
         tipo = type;
         tamanio = size;
     }
@@ -43,3 +46,5 @@ float Desechable:: getTamanio(){
 void Desechable::reciclar(){
     usarInsumo(cantidadInventario);
 }
+
+#endif
