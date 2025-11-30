@@ -1,3 +1,6 @@
+#ifndef CAFE_H
+#define CAFE_H
+
 #include <iostream>
 #include <string>
 #include "Insumo.h"
@@ -12,7 +15,7 @@ class Cafe: public Insumo{
 
     public:
     Cafe():Insumo(),grano(""),tueste(95),entero(false){}
-    Cafe(string id,string name,float costo,int cantidad,string bean,int roast,bool whole):Insumo(id,name,costo,cantidad){
+    Cafe(string id,string name,float price,int quantity,string bean,int roast,bool whole):Insumo(id,name,price,quantity){
         grano = bean;
         tueste = roast;
         entero = whole;
@@ -59,10 +62,10 @@ void Cafe::moler(){
         cout<<"El café ya está molido"<< endl;
 }
 void Cafe::tostar(int numero){
-    if (numero < tueste && (tueste - numero)>=15)
+    if ((numero < tueste) && (tueste-numero)>=15)
         tueste -= numero;
     else
         cout<<"El café ya está más tostado"<< endl;
 }
 
-
+#endif
