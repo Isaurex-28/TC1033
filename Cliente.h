@@ -1,3 +1,6 @@
+#ifndef CLIENTE_H  
+#define CLIENTE_H  
+
 #include <iostream>
 #include <string>
 
@@ -10,7 +13,7 @@ class Cliente{
     
     //Constructor
     Cliente():nombre(""),correo(""),alergias(false){};
-    Cliente(std::string name,std::string mail, bool alergies):nombre(name), correo(mail), alergias(alergies){};
+    Cliente(std::string name,std::string mail, bool allergy):nombre(name), correo(mail), alergias(allergy){};
 
     //Setters
     void setNombre(std::string);
@@ -21,9 +24,6 @@ class Cliente{
     std::string getNombre();
     std::string getCorreo();
     bool getAlergias();
-
-    //Métodos
-    void contactarCliente();
 };
 
 
@@ -48,7 +48,5 @@ std::string Cliente::getCorreo(){
 bool Cliente::getAlergias(){
     return alergias;
 }
-//Métodos
-void Cliente::contactarCliente(){
-    std::cout<< "Datos de contacto de " << nombre << ": " << correo << std::endl;
-}
+
+#endif
