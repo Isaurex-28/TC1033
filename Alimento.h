@@ -1,3 +1,6 @@
+#ifndef ALIMENTO_H
+#define ALIMENTO_H
+
 #include <iostream>
 #include <string>
 #include "Insumo.h"
@@ -11,7 +14,7 @@ class Alimento: public Insumo{
     
     public:
     Alimento():Insumo(),tipo(""),refrigeracion(true){}
-    Alimento(string id, string name, float costo, int cantidad, string type, bool fridge):Insumo(id,name,costo,cantidad){
+    Alimento(string id, string name, float price, int quantity, string type, bool fridge):Insumo(id,name,price,quantity){
         tipo = type;
         refrigeracion = fridge;
     }
@@ -36,3 +39,5 @@ string Alimento::getTipo(){
 bool Alimento::getRefrigeracion(){
     return refrigeracion;
 }
+
+#endif
