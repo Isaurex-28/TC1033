@@ -1,3 +1,6 @@
+#ifndef POLVO_H
+#define POLVO_H
+
 #include <iostream>
 #include <string>
 #include "Insumo.h"
@@ -11,7 +14,7 @@ class Polvo: public Insumo{
 
     public:
     Polvo():Insumo(),marca(""),peso(0.0){};
-    Polvo(string id,string name,float costo,int cantidad,string brand,float weight):Insumo(id,name,costo,cantidad){
+    Polvo(string id,string name,float price,int quantity,string brand,float weight):Insumo(id,name,price,quantity){
         marca = brand;
         peso = weight;
     };
@@ -37,3 +40,5 @@ string Polvo::getMarca(){
 float Polvo::getPeso(){
     return peso;
 }
+
+#endif
