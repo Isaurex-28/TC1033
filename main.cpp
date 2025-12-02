@@ -33,7 +33,7 @@ string crearInsumo(Cafeteria &c,int supplyType){
             string brand;
             float weight;
             
-            cout << "Marca: "; cin >> brand;
+            cout << "Marca: "; getline(cin, brand);
             cout << "Peso Neto (Kg): "; cin >> weight;
 
             c.nuevoPolvo(id,name,price,quantity,brand,weight);
@@ -45,7 +45,7 @@ string crearInsumo(Cafeteria &c,int supplyType){
             int roast;
             bool whole;
             
-            cout << "Tipo de Grano: "; cin >> bean;
+            cout << "Tipo de Grano: "; getline(cin, bean);
             cout << "Tueste (Escala de Agtron): "; cin >> roast;
             cout << "El grano es entero? (Si = 1 / No = 0): "; cin >> whole;
 
@@ -57,7 +57,7 @@ string crearInsumo(Cafeteria &c,int supplyType){
             string type;
             bool fridge;
             
-            cout << "Tipo de Alimento: "; cin >> type;
+            cout << "Tipo de Alimento: "; getline(cin, type);
             cout << "Necesita refrigerarse? (Si = 1 / No = 0): "; cin >> fridge;
 
             c.nuevoAlimento(id,name,price,quantity,type,fridge);
@@ -68,7 +68,7 @@ string crearInsumo(Cafeteria &c,int supplyType){
             string type;
             float size;
             
-            cout << "Tipo de Desechable: "; cin >> type;
+            cout << "Tipo de Desechable: "; getline(cin, type);
             cout << "Tamanio del Desechable"; cin >> size;
 
             c.nuevoDesechable(id,name,price,quantity,type,size);
@@ -87,8 +87,8 @@ string crearCliente(Cafeteria &c){
 
     cout << endl;
     cout << "Recuerda usar '_'en vez de espacios" << endl;
-    cout << "Nombre del cliente: "; cin >> name;
-    cout << "Correo electronico: "; cin >> mail;
+    cout << "Nombre del cliente: "; getline(cin, name);
+    cout << "Correo electronico: "; getline(cin, mail);
     cout << "Tiene alergias? (Si = 1 / No = 0): "; cin >> allergy;
 
     c.nuevoCliente(name,mail,allergy);
@@ -101,7 +101,7 @@ string agregarInsumo(Cafeteria &c,int supplyType){
     string id;
     int quantity;
     cout << c.mostrarInsumos(supplyType+1).str() << endl;;
-    cout << "ID del insumo a agregarle: "; cin >> id;
+    cout << "ID del insumo a agregarle: "; getline(cin, id);
     cout << "Cantidad del insumo a agregarle: "; cin >> quantity;
     string out = c.agregarIDinsumo(supplyType,id,quantity);
     return out;
@@ -114,7 +114,7 @@ string usarInsumo(Cafeteria &c,int supplyType){
     string out;
     cout << c.mostrarInsumos(supplyType+1).str() << endl;
     if(c.hayInsumos(supplyType)){
-        cout << "ID del insumo a utilizar: "; cin >> id;
+        cout << "ID del insumo a utilizar: "; getline(cin, id);
         cout << "Cantidad del insumo a utilizar: "; cin >> quantity;
         out = c.usarIDinsumo(supplyType,id,quantity);
     }
@@ -139,7 +139,7 @@ int main(){
     
     cout << "Bienvenido, vamos a crear tu cafeteria" << endl;
     cout << endl;
-    cout << "Nombre de tu cafeteria (Recuerda usar '_' en vez de espacio): "; cin >> cafeName;
+    cout << "Nombre de tu cafeteria (Recuerda usar '_' en vez de espacio): "; getline(cin, cafeName);
     cout << "Dinero inicial de tu cafeteria (solo el numero): "; cin >> cafeMoney;
     Cafeteria myCafe(cafeName,cafeMoney);
     cout << "Se creo tu cafeteria" << endl << endl;
