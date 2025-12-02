@@ -23,7 +23,6 @@ class Desechable: public Insumo{
     void setTamanio(float);
     string getTipo();
     float getTamanio();
-    void reciclar();
 };
 
 //Setters
@@ -41,10 +40,4 @@ string Desechable::getTipo(){
 float Desechable:: getTamanio(){
     return tamanio;
 }
-
-//Métodos
-void Desechable::reciclar(){
-    usarInsumo(cantidadInventario);
-}
-
 #endif
