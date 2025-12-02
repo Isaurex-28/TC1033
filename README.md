@@ -18,6 +18,6 @@ compilar con: `g++ main.cpp" -o main`
 
 correr en linux: `/main.out`
 
-correr en windows: `.\‎ /main.exe`
+correr en windows: `.\‎/main.exe`
 
 
