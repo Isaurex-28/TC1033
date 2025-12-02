@@ -49,6 +49,8 @@ public:
     void nuevoDesechable(string,string,float,int,string,float);
     void nuevoCliente(string,string,bool);
 
+    bool hayInsumos(int);
+
     stringstream mostrarPolvos();
     stringstream mostrarCafes();
     stringstream mostrarAlimentos();
@@ -234,8 +236,10 @@ stringstream Cafeteria::mostrarInsumos(int supplyType,string id = ""){
             break;
         case 4:
             aux << mostrarAlimentos().str();
+            break;
         case 5:
             aux << mostrarDesechables().str();
+            break;
         case 6:{
             for (int i = 0; i < contadorPolvo; i++){
                 if (id == listaPolvos[i].getID()){
@@ -310,6 +314,21 @@ stringstream Cafeteria::mostrarClientes(){
         }
     }
     return aux;
+}
+
+bool Cafeteria::hayInsumos(int supplyType){
+    switch(supplyType){
+        case 1: 
+            return contadorPolvo > 0;
+        case 2: 
+            return contadorCafe > 0;
+        case 3: 
+            return contadorAlimento > 0;
+        case 4: 
+            return contadorDesechable > 0;
+        default:
+            return false;
+    }
 }
 
 string Cafeteria::usarIDinsumo(int supplyType,string id,int quantity){
