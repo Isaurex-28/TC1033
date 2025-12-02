@@ -17,6 +17,6 @@ El atributo de tueste y el método tostar café, se basan en la Escala de Agtron
 compilar con: "g++ main.cpp" -o main
 
 correr en linux: "/cafeteria.out"
+correr en windows: ".\‎ /main.exe"
 
-correr en windows: ".\/main.exe"
 
