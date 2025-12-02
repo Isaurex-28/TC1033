@@ -23,8 +23,8 @@ string crearInsumo(Cafeteria &c,int supplyType){
 
     cout << endl;
     cout << "Recuerda usar '_'en vez de espacios" << endl;
-    cout << "ID: "; cin >> id;
-    cout << "Nombre del Insumo: "; cin >> name;
+    cout << "ID: "; getline(cin, id);
+    cout << "Nombre del Insumo: "; getline(cin, name);
     cout << "Precio Unitario: "; cin >> price;
     cout << "Cantidad en Inventario: "; cin >> quantity;
     
