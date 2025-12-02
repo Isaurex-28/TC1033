@@ -21,7 +21,9 @@ El menú de Insumos permite registrar/crear un nuevo insumo en el inventario, as
 El menú de Clientes permite registrar/crear un nuevo cliente en la lista de Clientes, así como mostrar la lista con la información general de cada cliente, y regresar al menú principal.
 
 # Consideraciones
-El atributo de tueste y el método tostar café, se basan en la Escala de Agtron, por lo que su valor default es de 95 y al tostarlo va bajando. 
+* El programa solo corre en la consola y esta hecho con c++ standard por lo que corre en todos los sistemas operativos
+
+* El atributo de tueste y el método tostar café, se basan en la Escala de Agtron, por lo que su valor default es de 95 y al tostarlo va bajando. 
 <img width="800" height="350" alt="image" src="https://github.com/user-attachments/assets/45cff1d5-fc7d-4763-b62b-633c64813b75" />
 
 # Instrucciones
