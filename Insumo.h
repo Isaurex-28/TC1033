@@ -20,7 +20,7 @@ class Insumo{
 
     //Setters
     void setID(string);
-    void setName(string);
+    void setNombre(string);
     void setCostoUnitario(float);
     void setCantidadInventario(int);
 
@@ -41,7 +41,7 @@ class Insumo{
 void Insumo::setID(string id){
     ID = id;
 }
-void Insumo::setName(string name){
+void Insumo::setNombre(string name){
     nombre = name;
 }
 void Insumo::setCostoUnitario(float price){
