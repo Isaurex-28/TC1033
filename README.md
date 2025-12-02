@@ -25,7 +25,7 @@ El atributo de tueste y el método tostar café, se basan en la Escala de Agtron
 <img width="800" height="350" alt="image" src="https://github.com/user-attachments/assets/45cff1d5-fc7d-4763-b62b-633c64813b75" />
 
 # Instrucciones
-compilar con: `g++ main.cpp" -o main`
+compilar con: `g++ main.cpp -o main`
 
 correr en linux: `/main.out`
 
