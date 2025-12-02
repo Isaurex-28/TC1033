@@ -111,10 +111,16 @@ string agregarInsumo(Cafeteria &c,int supplyType){
 string usarInsumo(Cafeteria &c,int supplyType){
     string id;
     int quantity;
+    string out;
     cout << c.mostrarInsumos(supplyType+1).str() << endl;
-    cout << "ID del insumo a utilizar: "; cin >> id;
-    cout << "Cantidad del insumo a utilizar: "; cin >> quantity;
-    string out = c.usarIDinsumo(supplyType,id,quantity);
+    if(c.hayInsumos(supplyType)){
+        cout << "ID del insumo a utilizar: "; cin >> id;
+        cout << "Cantidad del insumo a utilizar: "; cin >> quantity;
+        out = c.usarIDinsumo(supplyType,id,quantity);
+    }
+    else{
+        out = "No puedes usar insumos que no tienes";
+    }
     return out;
 }
 
