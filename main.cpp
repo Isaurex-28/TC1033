@@ -22,7 +22,6 @@ string crearInsumo(Cafeteria &c,int supplyType){
     int quantity;
 
     cout << endl;
-    cout << "Recuerda usar '_'en vez de espacios" << endl;
     cout << "ID: "; getline(cin, id);
     cout << "Nombre del Insumo: "; getline(cin, name);
     cout << "Precio Unitario: "; cin >> price;
@@ -86,7 +85,6 @@ string crearCliente(Cafeteria &c){
     bool allergy;
 
     cout << endl;
-    cout << "Recuerda usar '_'en vez de espacios" << endl;
     cout << "Nombre del cliente: "; getline(cin, name);
     cout << "Correo electronico: "; getline(cin, mail);
     cout << "Tiene alergias? (Si = 1 / No = 0): "; cin >> allergy;
@@ -139,7 +137,7 @@ int main(){
     
     cout << "Bienvenido, vamos a crear tu cafeteria" << endl;
     cout << endl;
-    cout << "Nombre de tu cafeteria (Recuerda usar '_' en vez de espacio): "; getline(cin, cafeName);
+    cout << "Nombre de tu cafeteria: "; getline(cin, cafeName);
     cout << "Dinero inicial de tu cafeteria (solo el numero): "; cin >> cafeMoney;
     Cafeteria myCafe(cafeName,cafeMoney);
     cout << "Se creo tu cafeteria" << endl << endl;
