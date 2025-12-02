@@ -4,34 +4,36 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Cliente{
     private:
-    std::string nombre;
-    std::string correo;
+    string nombre;
+    string correo;
     bool alergias;
     public:
     
     //Constructor
     Cliente():nombre(""),correo(""),alergias(false){};
-    Cliente(std::string name,std::string mail, bool allergy):nombre(name), correo(mail), alergias(allergy){};
+    Cliente(string name,string mail, bool allergy):nombre(name), correo(mail), alergias(allergy){};
 
     //Setters
-    void setNombre(std::string);
-    void setCorreo(std::string);
+    void setNombre(string);
+    void setCorreo(string);
     void setAlergias(bool);
 
     //Getters
-    std::string getNombre();
-    std::string getCorreo();
+    string getNombre();
+    string getCorreo();
     bool getAlergias();
 };
 
 
 //Setters
-void Cliente::setNombre(std::string name){
+void Cliente::setNombre(string name){
     nombre = name;
 }
-void Cliente::setCorreo(std::string mail){
+void Cliente::setCorreo(string mail){
     correo = mail;
 }
 void Cliente::setAlergias(bool alergy){
@@ -39,10 +41,10 @@ void Cliente::setAlergias(bool alergy){
 }
 
 //Getters
-std::string Cliente::getNombre(){
+string Cliente::getNombre(){
     return nombre;
 }
-std::string Cliente::getCorreo(){
+ string Cliente::getCorreo(){
     return correo;
 }
 bool Cliente::getAlergias(){
