@@ -6,6 +6,10 @@
 #include "Insumo.h"
 
 using namespace std;
+/* Clase Alimento que hereda de Insumo,
+* tiene 2 atributos y hereda todos los métodos
+* de Insumo.
+*/
 
 class Alimento: public Insumo{
     private:
@@ -41,3 +45,4 @@ bool Alimento::getRefrigeracion(){
 }
 
 #endif
+
