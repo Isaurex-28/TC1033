@@ -10,6 +10,7 @@ using namespace std;
 /*
 * Clase alimento que hereda de la clase Insumo
 */
+
 class Alimento: public Insumo{
     private:
     // Atributos específicos para alimento
@@ -22,7 +23,7 @@ class Alimento: public Insumo{
     * y la refrigeracion verdadera
     * 
     * @param
-    * @return Objeto Cafeteria
+    * @return Objeto Alimento
     */
     Alimento():Insumo(),tipo(""),refrigeracion(true){}
     
@@ -65,3 +66,4 @@ bool Alimento::getRefrigeracion(){
 }
 
 #endif
+
