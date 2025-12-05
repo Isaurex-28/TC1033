@@ -10,6 +10,7 @@ using namespace std;
 /*
 * Clase cafe que hereda de la clase Insumo
 */
+
 class Cafe: public Insumo{
     private:
     // Atributos específicos para cafe
@@ -23,7 +24,7 @@ class Cafe: public Insumo{
     * tueste en 95 y entero falso
     * 
     * @param
-    * @return Objeto Cafeteria
+    * @return Objeto Cafe
     */
     Cafe():Insumo(),grano(""),tueste(95),entero(false){}
     
@@ -107,3 +108,4 @@ void Cafe::tostar(int numero){
 }
 
 #endif
+
