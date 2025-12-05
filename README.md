@@ -26,6 +26,15 @@ El menú de Clientes permite registrar/crear un nuevo cliente en la lista de Cli
 * El atributo de tueste y el método tostar café, se basan en la Escala de Agtron, por lo que su valor default es de 95 y al tostarlo va bajando. 
 <img width="800" height="350" alt="image" src="https://github.com/user-attachments/assets/45cff1d5-fc7d-4763-b62b-633c64813b75" />
 
+# Correcciones
+1.- En el tercer avance se dio una reestructura completa al main para integrar las clases Polvo, Cafe, Alimento y Desechable al programa
+
+2.- Se agregaron ciclos de verificacion lineas 49, 165, 198, 303 y 339 de main.cpp
+
+3.- Se reestcturaron todos los archivos para que ninguna linea pasara de la columna 79
+
+4.- Se agregaron comentarios a todos los archivos explicando las clases, métodos y lógica del programa
+
 # Instrucciones
 compilar con: `g++ main.cpp -o main`
 
