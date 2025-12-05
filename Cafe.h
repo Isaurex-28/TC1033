@@ -7,15 +7,37 @@
 
 using namespace std;
 
+/*
+* Clase cafe que hereda de la clase Insumo
+*/
 class Cafe: public Insumo{
     private:
+    // Atributos específicos para cafe
     string grano;
     int tueste;
     bool entero;
 
     public:
+    /*
+    * Constructor de cafe que por default deja el tipo en blanco, el 
+    * tueste en 95 y entero falso
+    * 
+    * @param
+    * @return Objeto Cafeteria
+    */
     Cafe():Insumo(),grano(""),tueste(95),entero(false){}
-    Cafe(string id,string name,float price,int quantity,string bean,int roast,bool whole):Insumo(id,name,price,quantity){
+    
+    /*
+    * Constructor de cafe
+    * 
+    * @param string id: ID del cafe, string name: nombre del
+    * cafe, float price: costo unitario, int quantity: cantidad 
+    * en el inventario, string bean: tipo de grano, int roast:
+    * tueste según la escala de Agtron, bool whole: el grano es entero?
+    * @return
+    */    
+    Cafe(string id,string name,float price,int quantity,string bean,
+         int roast,bool whole):Insumo(id,name,price,quantity){
         grano = bean;
         tueste = roast;
         entero = whole;
@@ -54,15 +76,31 @@ bool Cafe::getEntero(){
     return entero;
 }
 
-//Métodos
+/*
+* Funcion que cambia el estatus de grano entero
+* 
+* @param 
+* @return
+*/
 void Cafe::moler(){
+    // Se verifica que el cafe no este ya molido
     if (entero)
+        // Se "muele" el café
         entero=false;
     else
         cout<<"El café ya está molido"<< endl;
 }
+
+/*
+* Funcion que cambia el numero de tueste del grano
+* 
+* @param int numero: cantidad de tueste a aumentar
+* @return
+*/
 void Cafe::tostar(int numero){
+    // Se verifica que el café no esté más tostado del rango posible
     if ((numero < tueste) && (tueste-numero)>=15)
+        // Se "tuesta" el cafe restando el numero del atributo
         tueste -= numero;
     else
         cout<<"El café ya está más tostado"<< endl;
