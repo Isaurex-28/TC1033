@@ -24,7 +24,7 @@ class Cliente{
     * en blanco, y las alergias en falso.
     * 
     * @param
-    * @return Objeto Cafeteria
+    * @return Objeto Cliente
     */
     Cliente():nombre(""),correo(""),alergias(false){};
     
@@ -71,3 +71,4 @@ bool Cliente::getAlergias(){
 }
 
 #endif
+
