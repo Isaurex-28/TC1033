@@ -6,22 +6,42 @@
 #include "Insumo.h"
 
 using namespace std;
-/* Clase Alimento que hereda de Insumo,
-* tiene 2 atributos y hereda todos los métodos
-* de Insumo.
-*/
 
+/*
+* Clase alimento que hereda de la clase Insumo
+*/
 class Alimento: public Insumo{
     private:
+    // Atributos específicos para alimento
     string tipo;
     bool refrigeracion;
     
     public:
+    /*
+    * Constructor de alimento que por default deja el tipo en blanco
+    * y la refrigeracion verdadera
+    * 
+    * @param
+    * @return Objeto Cafeteria
+    */
     Alimento():Insumo(),tipo(""),refrigeracion(true){}
-    Alimento(string id, string name, float price, int quantity, string type, bool fridge):Insumo(id,name,price,quantity){
+    
+
+    /*
+    * Constructor de alimento
+    * 
+    * @param string id: ID del alimento, string name: nombre del
+    * alimento, float price: costo unitario, int quantity: cantidad 
+    * en el inventario, string type: tipo de alimento, bool fridge:
+    * requiere refrigeracion?
+    * @return
+    */
+    Alimento(string id, string name, float price, int quantity, string type, 
+             bool fridge):Insumo(id,name,price,quantity){
         tipo = type;
         refrigeracion = fridge;
     }
+    
     void setTipo(string);
     void setRefrigeracion(bool);
     string getTipo();
@@ -45,4 +65,3 @@ bool Alimento::getRefrigeracion(){
 }
 
 #endif
-
